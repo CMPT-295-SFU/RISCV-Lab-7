@@ -55,6 +55,14 @@ loop_body:
     # 5. Multiply and Add. Accumulate into a0 
     # 6. Increment loop index.
     # 7. Jump to beginning of loop
+    lw s6, 0(s0)
+    add s0, s0, s3
+    lw s7, 0(s1)
+    add s1, s1, s4
+    mul s6, s6, s7
+    add a0, a0, s6
+    addi s5, s5, 1
+    j loop_start
 
 loop_end:
 
